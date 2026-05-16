@@ -10,16 +10,15 @@ Drei Tests:
 Parallelisiert über multiprocessing (14 Kerne M4).
 """
 
-import random
-import math
-import sys
 import os
+import random
+import sys
 import time
 from multiprocessing import Pool, cpu_count
-from typing import List, Tuple, Dict, Optional
+from typing import Dict, List
 
 sys.path.insert(0, os.path.dirname(__file__))
-from gaussian_loop import GaussInt, GaussianLoopSim
+from gaussian_loop import GaussianLoopSim, GaussInt
 
 PI_E_TARGET = 273.19
 MU_E_TARGET = 206.77
@@ -160,17 +159,17 @@ def test1_null_hypothesis():
 
     n = len(valid)
     print(f"\nGültige Konfigurationen: {n}")
-    print(f"\nTreffer (<1% Fehler):")
+    print("\nTreffer (<1% Fehler):")
     print(f"  π/e allein: {len(pi_hits)}/{n} = {len(pi_hits)/n*100:.1f}%")
     print(f"  μ/e allein: {len(mu_hits)}/{n} = {len(mu_hits)/n*100:.1f}%")
     print(f"  BEIDE:      {len(both_hits)}/{n} = {len(both_hits)/n*100:.1f}%")
-    print(f"\nNahe Treffer (<5% Fehler):")
+    print("\nNahe Treffer (<5% Fehler):")
     print(f"  π/e allein: {len(pi_loose)}/{n} = {len(pi_loose)/n*100:.1f}%")
     print(f"  μ/e allein: {len(mu_loose)}/{n} = {len(mu_loose)/n*100:.1f}%")
     print(f"  BEIDE:      {len(both_loose)}/{n} = {len(both_loose)/n*100:.1f}%")
 
     if both_hits:
-        print(f"\n--- Simultane <1%-Treffer: ---")
+        print("\n--- Simultane <1%-Treffer: ---")
         for r in sorted(both_hits, key=lambda x: x["pi_err"] + x["mu_err"]):
             print(f"  mod={r['mod']}, k={r['k']}, w={r['weights']}: "
                   f"π/e={r['pi_best']:.2f} ({r['pi_err']*100:.2f}%), "
@@ -226,7 +225,7 @@ def test2_split_vs_inert():
     print(f"  Inert-Primes: {INERT_PRIMES}")
 
     # Detail: bester Treffer pro Prime
-    print(f"\n  Detail pro Primzahl (Gewichte 1,i, bester k):")
+    print("\n  Detail pro Primzahl (Gewichte 1,i, bester k):")
     for mod in ALL_PRIMES:
         group = [r for r in valid if r["mod"] == mod]
         if not group:

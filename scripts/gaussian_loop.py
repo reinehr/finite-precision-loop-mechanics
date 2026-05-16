@@ -11,9 +11,9 @@ Kernidee: Komplexe Phase entsteht natürlich aus Rundung auf Z[i].
 Ref: concepts/06-i-als-potenzial-und-schoepfungsakt.md, theory/axioms.md
 """
 
-import random
 import math
-from typing import List, Tuple, Optional, Dict
+import random
+from typing import Dict, List, Optional, Tuple
 
 
 class GaussInt:
@@ -216,7 +216,7 @@ def phase_analysis(mod: int):
         return
 
     print(f"Periode: {period}, Konvergenz bei T={conv}")
-    print(f"Knoten 0 im Attraktor:")
+    print("Knoten 0 im Attraktor:")
     for t, state in enumerate(att[:min(period, 20)]):
         z = state[0]
         print(f"  T={t}: {z.re}+{z.im}i")

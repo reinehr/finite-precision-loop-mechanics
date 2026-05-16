@@ -17,7 +17,7 @@ from collections import defaultdict
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 
-from gaussian_loop import GaussInt, GaussianLoopSim
+from gaussian_loop import GaussianLoopSim, GaussInt
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD = 13
