@@ -170,6 +170,27 @@ Then inspect the evidence:
 
 ---
 
+## Related Work
+
+This project is positioned within a broader landscape of discrete and finite-precision physics. Three references are particularly relevant:
+
+**Koide (1983)**  
+Y. Koide, *A fermion-boson composite model of quarks and leptons*, Phys. Lett. B **120**, 161–165.  
+[doi:10.1016/0370-2693(83)90644-5](https://doi.org/10.1016/0370-2693(83)90644-5)  
+The Koide formula is the closest established analogue: a precise unexplained mass relation without an accepted Standard Model derivation. This repository frames its own observation in the same spirit — an unexplained numerical correlation, not a derivation.
+
+**'t Hooft (2014/2016)**  
+G. 't Hooft, *The Cellular Automaton Interpretation of Quantum Mechanics*, arXiv:1405.1548; Springer 2016.  
+[doi:10.1007/978-3-319-41285-6](https://doi.org/10.1007/978-3-319-41285-6) — Open Access.  
+The most rigorous scientific predecessor for the idea that deterministic finite-state dynamics with attractor cycles can underlie quantum-mechanical structure. This repository does not claim to derive QM from a cellular automaton; the overlap is the general framework of finite-state attractors as physically meaningful objects.
+
+**Cambridge Open Engage (December 2025)**  
+*The Discrete Algebraic Structure of the Fermion Mass Spectrum and its Pythagorean Geometric Origin*, preprint (not yet peer-reviewed).  
+[doi:10.33774/coe-2025-lnqj0](https://doi.org/10.33774/coe-2025-lnqj0) — CC BY 4.0.  
+An independent analysis that finds algebraic structure in the fermion mass spectrum potentially related to the arithmetic of Z[i] — the same mathematical object used here. The approach is entirely different (Pythagorean sum rules, not attractor dynamics), but the independent convergence on Z[i] is noted.
+
+---
+
 ## Status
 
 This is a speculative research program with a reproducible numerical core. The goal is not to present a finished theory, but to make the mechanism clear enough that it can be criticized, falsified, or improved.

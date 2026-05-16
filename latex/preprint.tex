@@ -29,7 +29,7 @@ Attractor periods of a finite dynamical system on the Gaussian-integer ring $\ma
 \section{Introduction}
 %------------------------------------------------------------------------------
 
-Like the Koide formula---which relates lepton masses with remarkable precision without an accepted derivation---we present an unexplained numerical correlation: attractor periods of a discrete map on Gaussian integers modulo a prime are close to several Standard Model mass ratios.
+Like the Koide formula~\cite{koide1983}---which relates lepton masses with remarkable precision without an accepted derivation---we present an unexplained numerical correlation: attractor periods of a discrete map on Gaussian integers modulo a prime are close to several Standard Model mass ratios.
 
 The setup is deliberately small: a ring of $k$ nodes, each holding a value in $\mathbb{Z}[i]/(p)$, updated by $z \to z^2 + w_L z_L + w_R z_R$ (mod $p$). Since the state space is finite, every orbit eventually enters a cycle. We compare the resulting periods and period ratios to mass-ratio targets.
 
@@ -262,5 +262,37 @@ Key upstream scripts are \texttt{significance\_test.py}, \texttt{significance\_v
 %------------------------------------------------------------------------------
 
 The author thanks early critical readers and tool-assisted reviewers for helping separate the narrow numerical observation from the broader speculative framework.
+
+%------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+%------------------------------------------------------------------------------
+
+\bibitem{koide1983}
+Y.~Koide,
+\textit{A fermion-boson composite model of quarks and leptons},
+Phys.\ Lett.\ B \textbf{120}, 161--165 (1983).
+\url{https://doi.org/10.1016/0370-2693(83)90644-5}
+
+\bibitem{thooft2014}
+G.~'t~Hooft,
+\textit{The Cellular Automaton Interpretation of Quantum Mechanics},
+arXiv:1405.1548 (2014); Springer 2016.
+\url{https://doi.org/10.1007/978-3-319-41285-6}
+
+\bibitem{cambridge2025}
+[Author(s) not listed in open-access record],
+\textit{The Discrete Algebraic Structure of the Fermion Mass Spectrum
+and its Pythagorean Geometric Origin},
+Cambridge Open Engage, 29 December 2025 (preprint, not peer-reviewed).
+\url{https://doi.org/10.33774/coe-2025-lnqj0}
+\newline
+Note: This work, developed independently of the present paper, finds
+algebraic structure in the fermion mass spectrum potentially related to
+the arithmetic of $\mathbb{Z}[i]$---the same mathematical object used
+here. The approach is entirely different (Pythagorean sum rules,
+not attractor dynamics), but the convergence on $\mathbb{Z}[i]$ is
+noted.
+
+\end{thebibliography}
 
 \end{document}
