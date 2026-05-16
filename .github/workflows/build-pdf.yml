@@ -5,14 +5,16 @@ on:
     branches: [main]
     paths:
       - "latex/**"
+      - "figures/**"
   pull_request:
     paths:
       - "latex/**"
+      - "figures/**"
   workflow_dispatch:
 
 jobs:
   build:
-    name: Compile preprint.tex → PDF
+    name: Compile LaTeX PDFs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,14 +24,18 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-latex-base texlive-latex-recommended \
             texlive-fonts-recommended texlive-science
-      - name: Compile PDF (two passes for references)
+      - name: Compile PDFs (two passes for references)
         working-directory: latex
         run: |
           pdflatex -interaction=nonstopmode preprint.tex
           pdflatex -interaction=nonstopmode preprint.tex
-      - name: Upload PDF artefact
+          pdflatex -interaction=nonstopmode theory_note.tex
+          pdflatex -interaction=nonstopmode theory_note.tex
+      - name: Upload PDF artefacts
         uses: actions/upload-artifact@v4
         with:
-          name: preprint-pdf
-          path: latex/preprint.pdf
+          name: finite-precision-loop-mechanics-pdfs
+          path: |
+            latex/preprint.pdf
+            latex/theory_note.pdf
           retention-days: 90

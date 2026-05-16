@@ -90,7 +90,17 @@ figures/
 
 latex/
   preprint.tex
+  theory_note.tex
 ```
+
+---
+
+## Documents
+
+- `latex/preprint.tex` is the narrow numerical observation: Gaussian-integer attractor periods, mass-ratio coincidences, split/inert controls, and reproducibility.
+- `latex/theory_note.tex` is the broader mechanism-first note: finite precision, loop traps, inertia from rounding, residue/radiation, interaction modes, emergent relational space, and tests.
+
+GitHub Actions compiles both files to PDF and uploads them as build artifacts.
 
 ---
 
