@@ -10,9 +10,11 @@
 \renewcommand\familydefault{\sfdefault}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{geometry}
 \geometry{margin=2.5cm}
+\graphicspath{{../figures/}}
 
 \title{Mass ratios from attractor periods on Gaussian integers: an observation}
 \author{Jakob Reinehr}
@@ -110,6 +112,16 @@ $\tau/e$ & 3477.23 & 3475.3 (compound) & 0.06\% \\
 
 $\tau/e$ is not a direct attractor period; it is a compound relation and therefore has a larger effective search space than the first two rows. It is included as an observed coincidence, not as equal-strength evidence.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig1_mass_ratios.png}
+\caption{Left: model vs experiment for all seven mass-ratio targets on a log scale.
+Right: percentage deviation from the PDG value. All targets lie below 1\%.
+Colour indicates match type: green = direct period, blue = period ratio,
+grey = compound, purple = secondary modulus.}
+\label{fig:mass_ratios}
+\end{figure}
+
 %------------------------------------------------------------------------------
 \section{Quark results}
 %------------------------------------------------------------------------------
@@ -166,6 +178,16 @@ Both $< 5\%$ & 7\% & \textbf{0\%} \\
 
 Zero loose lepton hits are observed for inert primes in this symmetric scan. For quarks, a Look-Elsewhere Monte Carlo (10000 runs) gives $p < 0.0001$ for the number of direct hits observed vs.\ random expectations at mod $13$.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig2_split_inert.png}
+\caption{Split vs inert prime comparison in the symmetric $\mathbb{Z}[i]/(p)$ lepton scan.
+Left: period richness (mean number of distinct periods and mean maximum period ratio).
+Right: SM target hit rates for $\pi/e$, $\mu/e$, and both simultaneously.
+Inert primes produce zero hits in all tested symmetric configurations.}
+\label{fig:split_inert}
+\end{figure}
+
 \subsection{Falsifiable prediction}
 
 An inert-prime hit in the same symmetric search class would falsify the current structural claim. Broader asymmetric constructions must be treated separately.
@@ -215,6 +237,16 @@ Degree $d$ & Distinct periods & Shannon entropy & Best SM match \\
 \end{table}
 
 Only $d=2$ simultaneously maximizes attractor entropy and reproduces SM ratios. Higher degrees contract the dynamics and reduce period diversity.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig3_entropy_degree.png}
+\caption{Shannon entropy of the attractor basin distribution (left axis, bars)
+and best SM match error (right axis, dashed line) for polynomial degrees
+$d \in \{1,\ldots,5\}$ on $\mathbb{Z}[i]/(13)$, $k=6$, $w=(1,i)$.
+Only $d=2$ simultaneously achieves maximum entropy and sub-0.15\% SM accuracy.}
+\label{fig:entropy_degree}
+\end{figure}
 
 %------------------------------------------------------------------------------
 \section{What this does not explain}
