@@ -1,0 +1,4 @@
+# Optional: visualization dependencies
+# Required only for scripts/visualize.py (generates figures/)
+# The core simulation scripts have no external dependencies.
+matplotlib>=3.7
