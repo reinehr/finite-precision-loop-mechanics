@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# LaTeX build outputs
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.pdf
+
+# Local editor/system files
+.DS_Store
+.idea/
+.vscode/
+
