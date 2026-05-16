@@ -148,10 +148,6 @@ def fig_mass_ratios() -> None:
 # ── Figure 2: split vs inert ───────────────────────────────────────────────
 
 def fig_split_inert() -> None:
-    metrics    = list(SPLIT_INERT.keys())
-    split_vals = [SPLIT_INERT[m][0] for m in metrics]
-    inert_vals = [SPLIT_INERT[m][1] for m in metrics]
-
     # two sub-groups: "counts" (periods, max-ratio) and "hit rates"
     fig, (ax_left, ax_right) = plt.subplots(1, 2, figsize=(11, 4.5))
     fig.suptitle(
