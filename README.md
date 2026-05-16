@@ -1,5 +1,9 @@
 # Finite Precision Loop Mechanics
 
+[![CI](https://github.com/reinehr/finite-precision-loop-mechanics/actions/workflows/ci.yml/badge.svg)](https://github.com/reinehr/finite-precision-loop-mechanics/actions/workflows/ci.yml)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+
 This repository presents a mechanism-first idea:
 
 > If physical processes have finite precision, then rounding is not merely an error. It can become a physical mechanism: it creates thresholds, residues, attractor basins, loop traps, inertia-like resistance, radiation-like leakage, interaction modes, and eventually an emergent relational space.
