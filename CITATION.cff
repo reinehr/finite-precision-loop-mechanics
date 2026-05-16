@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it as below."
+type: software
+title: "Finite Precision Loop Mechanics"
+abstract: >
+  A mechanism-first exploration of finite-precision physics.
+  Physical evolution cannot carry infinite precision; rounding becomes a
+  physical mechanism that creates thresholds, attractor basins (loop traps),
+  inertia-like resistance, and residue-like leakage.
+  The repository includes theoretical documentation, reproducible Python
+  scripts, and numerical evidence from Gaussian-integer models Z[i]/(p).
+authors:
+  - family-names: Reinehr
+    given-names: Jakob
+    alias: reinehr
+repository-code: "https://github.com/reinehr/finite-precision-loop-mechanics"
+license: CC-BY-NC-4.0
+keywords:
+  - finite precision
+  - loop mechanics
+  - Gaussian integers
+  - computational physics
+  - reproducible research
+date-released: "2026-05-16"
