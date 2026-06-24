@@ -1,0 +1,22 @@
+{"mod": 5, "kind": "split", "n_periods": 8, "pi_err": 0.0158, "mu_err": 0.0737, "pi_best": 277.5, "mu_best": 222.0, "both_loose": false, "periods": [1, 4, 48, 111, 222, 1110, 1332, 1776]}
+{"mod": 17, "kind": "split", "n_periods": 11, "pi_err": 0.0127, "mu_err": 0.2961, "pi_best": 276.6666666666667, "mu_best": 268.0, "both_loose": false, "periods": [9, 54, 81, 82, 171, 627, 1170, 1242, 2412, 2490, 2946]}
+{"mod": 37, "kind": "split", "n_periods": 1, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": [1512]}
+{"mod": 41, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 53, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 61, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 73, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 89, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 97, "kind": "split", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 3, "kind": "inert", "n_periods": 4, "pi_err": 0.6925, "mu_err": 0.5938, "pi_best": 84.0, "mu_best": 84.0, "both_loose": false, "periods": [2, 33, 148, 168]}
+{"mod": 7, "kind": "inert", "n_periods": 5, "pi_err": 0.7218, "mu_err": 0.6324, "pi_best": 76.0, "mu_best": 76.0, "both_loose": false, "periods": [6, 78, 118, 456, 2850]}
+{"mod": 11, "kind": "inert", "n_periods": 1, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": [2460]}
+{"mod": 19, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 23, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 31, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 43, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 47, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 59, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 67, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 71, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 79, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}
+{"mod": 83, "kind": "inert", "n_periods": 0, "pi_err": null, "mu_err": null, "pi_best": null, "mu_best": null, "both_loose": false, "periods": []}

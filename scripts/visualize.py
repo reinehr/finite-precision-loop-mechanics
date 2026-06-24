@@ -4,10 +4,11 @@ Generate publication figures for finite-precision-loop-mechanics.
 
 Requires: matplotlib  (pip install matplotlib  or  brew install python-matplotlib)
 
-Produces three figures in figures/:
+Produces four figures in figures/:
   fig1_mass_ratios.png    – model vs experiment for all 7 targets
   fig2_split_inert.png    – split vs inert prime structural comparison
   fig3_entropy_degree.png – Shannon entropy and SM accuracy by polynomial degree
+  fig4_holdout.png        – pre-registered out-of-sample hold-out (p=13-specificity)
 
 Run from the repository root:
   python3 scripts/visualize.py
@@ -15,6 +16,7 @@ Run from the repository root:
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 try:
@@ -50,6 +52,10 @@ LGRAY  = "#d1d5db"
 ROOT   = Path(__file__).resolve().parents[1]
 OUTDIR = ROOT / "figures"
 OUTDIR.mkdir(exist_ok=True)
+
+HOLDOUT_JSONL = ROOT / "evidence" / "split_inert_holdout.jsonl"
+# discovery prime p=13 (excluded from the hold-out), from the core lepton result
+P13_PI_ERR, P13_MU_ERR = 0.07, 0.11  # percent
 
 
 # ── data (mirrors reproduce_publication_core.py constants) ─────────────────
@@ -266,6 +272,67 @@ def fig_entropy_degree() -> None:
     print(f"  {path.relative_to(ROOT)}")
 
 
+# ── Figure 4: out-of-sample hold-out ──────────────────────────────────────
+
+def fig_holdout() -> None:
+    if not HOLDOUT_JSONL.exists():
+        print(f"  (skip fig4: {HOLDOUT_JSONL.name} not found)")
+        return
+    rows = [json.loads(ln) for ln in HOLDOUT_JSONL.read_text().splitlines() if ln.strip()]
+    usable = [r for r in rows if r.get("pi_err") is not None]
+    split = sorted((r for r in usable if r["kind"] == "split"), key=lambda r: r["mod"])
+    inert = sorted((r for r in usable if r["kind"] == "inert"), key=lambda r: r["mod"])
+    no_split = sum(1 for r in rows if r["kind"] == "split" and r.get("pi_err") is None)
+    no_inert = sum(1 for r in rows if r["kind"] == "inert" and r.get("pi_err") is None)
+
+    entries = [("p=13*", P13_PI_ERR, P13_MU_ERR, GREEN)]
+    entries += [(f"p={r['mod']}", r["pi_err"] * 100, r["mu_err"] * 100, BLUE) for r in split]
+    entries += [(f"p={r['mod']}", r["pi_err"] * 100, r["mu_err"] * 100, RED) for r in inert]
+
+    labels = [e[0] for e in entries]
+    colors = [e[3] for e in entries]
+    ypos = list(range(len(entries)))[::-1]
+
+    fig, (axp, axm) = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
+    fig.suptitle(
+        "Out-of-sample hold-out (discovery prime p=13 excluded):\n"
+        "only p=13 meets both π/e and μ/e < 5%",
+        fontsize=12.5, fontweight="bold",
+    )
+
+    def panel(ax: plt.Axes, errs: list[float], title: str) -> None:
+        ax.barh(ypos, errs, color=colors, zorder=3, height=0.66)
+        ax.set_yticks(ypos)
+        ax.set_yticklabels(labels)
+        ax.set_xscale("log")
+        ax.axvline(5.0, color=RED, linestyle="--", linewidth=1.2)
+        ax.axvline(1.0, color=GRAY, linestyle=":", linewidth=1.0)
+        ax.set_xlabel("best relative error (%, log scale)")
+        ax.set_title(title, fontsize=11)
+
+    panel(axp, [e[1] for e in entries], "π/e")
+    panel(axm, [e[2] for e in entries], "μ/e")
+
+    legend = [
+        mpatches.Patch(color=GREEN, label="p=13 (reference, excluded)"),
+        mpatches.Patch(color=BLUE, label="split  (p ≡ 1 mod 4)"),
+        mpatches.Patch(color=RED, label="inert  (p ≡ 3 mod 4)"),
+    ]
+    axp.legend(handles=legend, fontsize=8.5, loc="lower right")
+
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    fig.text(
+        0.5, 0.015,
+        f"Primes with no attractor pair (omitted): {no_split} split, {no_inert} inert. "
+        "Split primes approach π/e but fail μ/e; inert primes fail both.",
+        ha="center", fontsize=8.5, color=GRAY,
+    )
+    path = OUTDIR / "fig4_holdout.png"
+    fig.savefig(path, dpi=180, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  {path.relative_to(ROOT)}")
+
+
 # ── entry point ────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -273,4 +340,5 @@ if __name__ == "__main__":
     fig_mass_ratios()
     fig_split_inert()
     fig_entropy_degree()
+    fig_holdout()
     print(f"Done — figures written to {OUTDIR.relative_to(ROOT)}/")
