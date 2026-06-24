@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-Attractor periods of a finite dynamical system on the Gaussian-integer ring $\mathbb{Z}[i]/(p)$ show close numerical coincidences with several Standard-Model mass-ratio targets. We present this as an observation, not as a derivation of the Standard Model. The core map is a ring of $k$ nodes with local update $z_j \mapsto z_j^2 + w_Lz_{j-1}+w_Rz_{j+1}$ modulo $p$. Within the tested search space, the configuration $p=13$, $k=6$, ring topology, and weights $(1,i)$ or $(i,1)$ yields close lepton-ratio coincidences, while coupled $k=3+k=3$ systems using the Gaussian factorization $13=(3+2i)(3-2i)$ yield close quark-ratio coincidences. The strongest structural control is the split/inert distinction: split primes ($p \equiv 1 \bmod 4$) produce richer and more target-like spectra in the tested symmetric setups, whereas inert primes ($p \equiv 3 \bmod 4$) do not. We give search accounting, null-model references, a one-command table reproduction script, and explicit limitations. Gauge structure, Lorentz invariance, scattering amplitudes, the update-rule derivation, and $\alpha \approx 1/137$ remain open.
+Attractor periods of a finite dynamical system on the Gaussian-integer ring $\mathbb{Z}[i]/(p)$ show close numerical coincidences with several Standard-Model mass-ratio targets. We present this as an observation, not as a derivation of the Standard Model. The core map is a ring of $k$ nodes with local update $z_j \mapsto z_j^2 + w_Lz_{j-1}+w_Rz_{j+1}$ modulo $p$. Within the tested search space, the configuration $p=13$, $k=6$, ring topology, and weights $(1,i)$ or $(i,1)$ yields close lepton-ratio coincidences, while coupled $k=3+k=3$ systems using the Gaussian factorization $13=(3+2i)(3-2i)$ yield close quark-ratio coincidences. The strongest structural control is the split/inert distinction: in the tested symmetric setups inert primes ($p \equiv 3 \bmod 4$) produce no target-like spectra, while split primes ($p \equiv 1 \bmod 4$) are richer; a pre-registered hold-out shows the close joint lepton match is specific to $p=13$. We give search accounting, null-model references, a one-command table reproduction script, and explicit limitations. Gauge structure, Lorentz invariance, scattering amplitudes, the update-rule derivation, and $\alpha \approx 1/137$ remain open.
 \end{abstract}
 
 %------------------------------------------------------------------------------
@@ -155,7 +155,7 @@ The first three rows are associated with the $p=13$ Gaussian-factor mechanism. T
 
 \subsection{Claim}
 
-\textbf{In the tested symmetric $\mathbb{Z}[i]/(p)$ loop setups, split primes yield the target-like spectra; inert primes do not.}
+\textbf{In the tested symmetric $\mathbb{Z}[i]/(p)$ loop setups, inert primes ($p \equiv 3 \bmod 4$) produce no target-like lepton spectra, while split primes ($p \equiv 1 \bmod 4$) produce richer spectra; the close joint lepton match is realized at $p=13$.}
 
 This is the strongest structural control in the current evidence package. Split primes factor, providing a conjugate pair that can break symmetry; inert primes do not. A formal theorem would require a proof beyond the numerical evidence reported here.
 
@@ -184,8 +184,19 @@ Zero loose lepton hits are observed for inert primes in this symmetric scan. For
 \caption{Split vs inert prime comparison in the symmetric $\mathbb{Z}[i]/(p)$ lepton scan.
 Left: period richness (mean number of distinct periods and mean maximum period ratio).
 Right: SM target hit rates for $\pi/e$, $\mu/e$, and both simultaneously.
-Inert primes produce zero hits in all tested symmetric configurations.}
+Inert primes produce zero hits in all tested symmetric configurations. These in-sample split hit rates do not generalize: the out-of-sample hold-out (Fig.~\ref{fig:holdout}) shows the joint $\pi/e$, $\mu/e$ match is specific to $p=13$.}
 \label{fig:split_inert}
+\end{figure}
+
+\subsection{Out-of-sample hold-out}
+
+A pre-registered hold-out test (\texttt{evidence/split\_inert\_holdout\_summary.md}) probes whether the lepton match generalizes across split primes. Holding out the discovery prime $p=13$ (and $p=29$) and fixing the rule (ring, $k=6$, $w=(1,i)$), no other split prime achieves both $\pi/e$ and $\mu/e$ within $5\%$: the close \emph{joint} lepton coincidence is specific to $p=13$. The qualitative split/inert asymmetry persists---inert primes still yield zero loose hits, and split primes remain richer (mean distinct periods $2.2$ vs $0.8$)---but at fixed $k=6$ this richness difference is not statistically significant (label-permutation $p \approx 0.17$). We therefore present the split/inert effect as a robust negative control (inert primes fail) together with a $p=13$-specific positive coincidence, not as a generic property of all split primes.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig4_holdout.png}
+\caption{Pre-registered out-of-sample hold-out, discovery prime $p=13$ excluded. Best relative error for $\pi/e$ (left) and $\mu/e$ (right) per prime (log scale; dashed line $5\%$, dotted $1\%$). Only $p=13$ (green, shown for reference) meets both thresholds; held-out split primes (blue) approach $\pi/e$ but fail $\mu/e$, while inert primes (red) fail both. Large primes produced no short attractor pair within the fixed sampling and are omitted.}
+\label{fig:holdout}
 \end{figure}
 
 \subsection{Falsifiable prediction}
